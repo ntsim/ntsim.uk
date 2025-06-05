@@ -1,0 +1,47 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import { format } from 'date-fns';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('post');
+
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: post,
+  }));
+}
+
+type Props = CollectionEntry<'post'>;
+
+const post = Astro.props;
+const { title, description, date, updatedDate, heroImage } = post.data;
+const { Content } = await render(post);
+---
+
+<Layout {title} {description}>
+  <h1 class="mb-6 text-4xl font-bold">{title}</h1>
+
+  <p>
+    Posted <time
+      class="font-semibold text-accent-foreground"
+      datetime={date.toISOString()}>{format(date, 'do MMMM yyyy')}</time
+    >{
+      updatedDate && (
+        <span>
+          {' • Updated'}
+          <time
+            class="font-semibold text-accent-foreground"
+            datetime={updatedDate.toISOString()}
+          >
+            {format(updatedDate, 'do MMMM yyyy')}
+          </time>
+        </span>
+      )
+    }
+  </p>
+
+  <div class="prose mt-8 xl:prose-lg">
+    <Content />
+  </div>
+</Layout>

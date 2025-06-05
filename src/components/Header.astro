@@ -1,0 +1,19 @@
+---
+import HeaderLink from '../components/HeaderLink.astro';
+import SocialLinks from './SocialLinks.astro';
+import ThemeToggle from './ThemeToggle.astro';
+---
+
+<header class="mx-auto w-full max-w-4xl px-8 py-10">
+  <nav aria-label="Main" class="flex items-center justify-between">
+    <div class="flex gap-8 text-lg">
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/posts">Blog</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
+    </div>
+    <div class="flex gap-2">
+      <ThemeToggle />
+      <SocialLinks />
+    </div>
+  </nav>
+</header>

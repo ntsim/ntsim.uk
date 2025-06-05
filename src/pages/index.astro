@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+import profileImage from '../assets/images/profile-square.jpg';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <div class="flex">
+    <div>
+      <h1 class="text-4xl font-bold">Hi, I'm Nick! 👋</h1>
+
+      <div class="prose mt-8 text-xl">
+        <p class="mt-4">
+          I'm a UK-based <strong>software engineer</strong> mostly working in
+
+          <strong>web development</strong> and consider myself a
+          <strong>full-stack generalist</strong>.
+        </p>
+
+        <p>
+          Over the last 10 years, I've worked on everything from complex
+          government systems to websites for local businesses and charities.
+        </p>
+
+        <p>
+          I'm currently looking for my next role and am open to new
+          opportunities.
+        </p>
+
+        <p>
+          <a href="mailto:nicholastsim@gmail.com">Get in touch</a> if you think I'd
+          be a good fit for your team!
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>
