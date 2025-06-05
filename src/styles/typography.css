@@ -1,0 +1,27 @@
+strong {
+  @apply font-bold text-accent-foreground;
+}
+
+.prose {
+  --tw-prose-body: var(--color-foreground);
+  --tw-prose-links: var(--color-foreground);
+  --tw-prose-invert-body: var(--color-foreground);
+
+  a {
+    @apply hover:border-b-4 hover:text-accent-foreground;
+    @apply border-b-2 border-b-accent-foreground font-bold no-underline transition-all;
+  }
+
+  :not(pre) code {
+    @apply rounded bg-code p-1 font-semibold text-code-foreground;
+
+    &:before,
+    &:after {
+      content: none;
+    }
+  }
+}
+
+.dark .prose {
+  @apply prose-invert;
+}

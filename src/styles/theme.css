@@ -1,0 +1,24 @@
+@theme {
+  --font-sans:
+    'Lexend', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-mono: 'Geist Mono Variable', monospace;
+
+  --color-background: oklch(1 0.005 145);
+  --color-foreground: oklch(0.13 0 150);
+  --color-muted: oklch(0.55 0 150);
+  --color-footer: oklch(0.888 0.041 150);
+  --color-accent-foreground: oklch(0.5 0.1 155);
+  --color-code: oklch(0.95 0.025 150);
+  --color-code-foreground: oklch(0.5 0.5 155);
+}
+
+.dark {
+  --color-background: oklch(0.28 0.015 170);
+  --color-foreground: oklch(0.9 0.01 150);
+  --color-muted: oklch(0.55 0 150);
+  --color-footer: oklch(0.35 0.015 170);
+  --color-accent-foreground: oklch(1 0.2 160);
+  --color-code: oklch(0.4 0.02 175);
+  --color-code-foreground: oklch(0.85 0.17 155);
+}
